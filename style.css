@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     box-sizing: border-box;
     margin: 0;
@@ -26,7 +30,7 @@ main{
 }
 
 .basket-container{
-    width: 400px;
+    width: 300px;
 }
 
 #basket_line{
@@ -68,7 +72,7 @@ main{
     height: 80px;
     position: absolute;
     top: 260px;
-    left: calc(50% - 240px)
+    left: calc(50% - 190px)
 }
     
 
@@ -79,10 +83,11 @@ main{
     object-fit: cover;
 }
 
-.main-dish-container{
+.dish-container{
     padding-top: 24px;
     padding-left: 24px;
     padding-right: 24px;
+    padding-bottom: 24px;
     background-color: rgba(0, 0, 0, 0.03);
 }
 
@@ -110,9 +115,27 @@ main{
     padding-bottom: 16px;
 }
 
-.main-dishes-content span{
+.main-dishes-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 24px;
+}
+
+#dish_line{
     color: black;
     font-size: 20px;
     font-weight: bold;
-    padding-bottom: 24px;
+}
+
+#side-dish-line{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dishes-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }

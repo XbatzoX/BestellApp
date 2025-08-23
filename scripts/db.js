@@ -20,3 +20,21 @@ let myDishes = [
         "info" : "Nudeln mit saftigen Rinderhackbällchen"
     }
 ];
+
+let mySideDishes = [
+    {
+        "name" : "Chicken Salat",
+        "price" : 10.5,
+        "info" : "Bauernsalat mit panierter Hähnchenbrust"
+    },
+    {
+        "name" : "Krabben Salat",
+        "price" : 12.9,
+        "info" : "Salat mit Nordseekrabben und Cocktailsoße"
+    },
+    {
+        "name" : "Salat Greek style",
+        "price" : 11.50,
+        "info" : "Frischer Bauernsalat mit Oliven und Feta"
+    }
+];

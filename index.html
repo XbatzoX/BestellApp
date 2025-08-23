@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BestellApp</title>
     <link rel="shortcut icon" href="./assets/icons/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/dishBoxes.css">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./style.css">
 
@@ -30,16 +31,21 @@
                     <img class="circle-img" src="./assets/img/lahmacun.jpg" alt="a turkish pizza on a plate">
                 </div>
             </div>
-            <div class="main-dish-container">
+            <div class="dish-container">
                 <div class="navbar">
                     <img src="./assets/icons/arrow_right.svg" alt="arrow right logo">
                     <a href="#">Hauptgerichte</a>
-                    <a href="#">Beilagen</a>
+                    <a href="#side-dish-line">Beilagen</a>
                 </div>
                 <img class="main-dish-img" src="./assets/img/spaghetti-and-meatballs.jpg" alt="main dish example spaghetti with meatballs">
                 <div class="main-dishes-content">
-                    <span>Hauptgerichte</span>
+                    <span id="dish_line">Hauptgerichte</span>
                     <div class="dishes-content" id="main_dishes"></div>
+                </div>
+                <img class="main-dish-img" src="./assets/img/salad.jpg">
+                <div class="main-dishes-content">
+                    <span id="side-dish-line">Beilagen</span>
+                    <div class="dishes-content" id="side_dishes"></div>
                 </div>
             </div>
         </section>

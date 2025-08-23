@@ -1,7 +1,9 @@
 let countOfMainDishes = myDishes.length;
+let countOfSideDishes = mySideDishes.length;
 
 function renderDishes(){
     renderMainDishes(countOfMainDishes);
+    renderSideDishes(countOfSideDishes);
 }
 
 function renderMainDishes(amount){
@@ -19,5 +21,22 @@ function renderMainDishes(amount){
 
         contentMainDishesRef.innerHTML += getMainDishesTemplate(actualDish, objKeys, index);
         
+    }
+}
+
+function renderSideDishes(amount){
+    const contentSideDishesRef = document.getElementById('side_dishes');
+    contentSideDishesRef.innerHTML = '';
+
+    for (let index = 0; index < amount; index++){
+        let actualSideDish = {
+            "name" : mySideDishes[index].name,
+            "price" : mySideDishes[index].price,
+            "info" : mySideDishes[index].info
+        };
+        actualSideDish.price = actualSideDish.price.toFixed(2);
+        let objKeys = Object.keys(actualSideDish);
+
+        contentSideDishesRef.innerHTML += getSideDishesTemplate(actualSideDish, objKeys, index);
     }
 }

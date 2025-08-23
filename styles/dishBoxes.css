@@ -1,0 +1,39 @@
+.mainDish-box{
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.mainDish-box:hover{
+    cursor: pointer;
+    background-color: rgba(252, 173, 27, 0.3);
+}
+
+.mainDish-box span{
+    color: rgb(95, 92, 92);
+}
+
+.headline-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headline-box img{
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.head-description{
+    color: black !important;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.dish-price{
+    color: rgb(219, 151, 24) !important;
+}
