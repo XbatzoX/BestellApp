@@ -1,6 +1,9 @@
 let countOfMainDishes = myDishes.length;
 let countOfSideDishes = mySideDishes.length;
 
+let basketMainDishes = [];
+let basketSideDishes = [];
+
 function renderDishes(){
     renderMainDishes(countOfMainDishes);
     renderSideDishes(countOfSideDishes);
@@ -39,4 +42,16 @@ function renderSideDishes(amount){
 
         contentSideDishesRef.innerHTML += getSideDishesTemplate(actualSideDish, objKeys, index);
     }
+}
+
+function renderBasket(){
+
+}
+
+function putDishToBasket(index){
+    let dish = {
+        "number" : index,
+        "name" : myDishes[index].name,
+        "price" : myDishes[index].price
+    };
 }
