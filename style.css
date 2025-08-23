@@ -1,0 +1,118 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'myRoboto';
+}
+
+.headline{
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: rgb(219, 151, 24);
+}
+
+.headline img{
+    height: 64px;
+    width: auto;
+}
+
+main{
+    display: flex;
+}
+
+.main-container{
+    flex: 1;
+}
+
+.basket-container{
+    width: 400px;
+}
+
+#basket_line{
+    text-align: center;
+}
+
+.daily-receipt{
+    padding-bottom: 16px;
+}
+
+.daily-img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+#daily_receipt_underline{
+    padding-left: 24px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#comment_daily_receipt{
+    color: rgb(219, 151, 24);
+    font-size: 18px;
+    padding-left: 24px;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 12px;
+}
+
+.circle-img-container{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 260px;
+    left: calc(50% - 240px)
+}
+    
+
+.circle-img{
+    height: 72px;
+    width: 72px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.main-dish-container{
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.navbar{
+    display: flex;
+    gap: 12px;
+    font-size: 20px;
+    padding-bottom: 16px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: rgb(95, 92, 92);
+}
+
+.navbar a:hover{
+    cursor: pointer;
+    color: rgb(48, 46, 46);
+}
+
+.main-dish-img{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 16px;
+}
+
+.main-dishes-content span{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 24px;
+}

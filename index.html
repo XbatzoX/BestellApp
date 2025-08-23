@@ -4,12 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BestellApp</title>
-    <link rel="shortcut icon" href="./assets/icons/" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/icons/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./style.css">
 
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/template.js"></script>
     <script src="./script.js"></script>
 </head>
-<body>
-    
+<body onload="renderDishes()">
+    <header>
+        <div class="headline">
+            <img src="./assets/img/Bestell App- Logo.svg" alt="Bestell App Logo">
+        </div>
+    </header>
+    <main>
+        <section class="main-container">
+            <div class="daily-receipt">
+                <img class="daily-img" src="./assets/img/kebap.jpg" alt="picture of daily receipt">
+                <div class="info-container">
+                    <span id="daily_receipt_underline">Döner Kebab</span>
+                    <span id="comment_daily_receipt">Bewertung (4,8 von 5 Sternen)</span>
+                </div>
+                <div class="circle-img-container">
+                    <img class="circle-img" src="./assets/img/lahmacun.jpg" alt="a turkish pizza on a plate">
+                </div>
+            </div>
+            <div class="main-dish-container">
+                <div class="navbar">
+                    <img src="./assets/icons/arrow_right.svg" alt="arrow right logo">
+                    <a href="#">Hauptgerichte</a>
+                    <a href="#">Beilagen</a>
+                </div>
+                <img class="main-dish-img" src="./assets/img/spaghetti-and-meatballs.jpg" alt="main dish example spaghetti with meatballs">
+                <div class="main-dishes-content">
+                    <span>Hauptgerichte</span>
+                    <div class="dishes-content" id="main_dishes"></div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="basket-container">
+            <h2 id="basket_line">Warenkorb</h2>
+        </section>
+
+    </main>
 </body>
 </html>
