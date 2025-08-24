@@ -45,13 +45,43 @@ function renderSideDishes(amount){
 }
 
 function renderBasket(){
+    const contentBasketMainRef = document.getElementById('my_basket_main');
+    contentBasketMainRef.innerHTML = '';
 
+    for (let index = 0; index < basketMainDishes.length; index++) {
+        let dish = {
+        "number" : basketMainDishes[index].number,
+        "name" : basketMainDishes[index].name,
+        "price" : basketMainDishes[index].price,
+        "count" : basketMainDishes[index].count
+        };
+
+        let objKeys = Object.keys(dish);
+
+        contentBasketMainRef.innerHTML += getBasketMainTemplate(dish, objKeys, index);
+    }
 }
 
 function putDishToBasket(index){
     let dish = {
         "number" : index,
         "name" : myDishes[index].name,
-        "price" : myDishes[index].price
+        "price" : myDishes[index].price,
+        "count" : 1
     };
+    let elementIndexNum = findElementInArr(index, dish);
+
+    if (elementIndexNum != (-1)){
+        basketMainDishes[elementIndexNum].count += 1;
+    }
+    else{
+        basketMainDishes.push(dish);
+    }
+
+    renderBasket();
+}
+
+function findElementInArr(index, obj){
+    let objKeys = Object.keys(obj);
+    return basketMainDishes.findIndex((element) => {return (element[objKeys[0]] == index)});
 }
