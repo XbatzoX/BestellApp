@@ -25,12 +25,15 @@ function getBasketMainTemplate(basketObj, objKeys, index){
                 <span class="head-basket">${basketObj[objKeys[1]]}</span>
                 <div class="control-basket">
                     <div class="count-basket">
-                        <img class="basket-img" src="./assets/icons/remove_20px.svg" alt="minus icon for sub button">
+                        <img class="basket-img" src="./assets/icons/remove_20px.svg" alt="minus icon for sub button"
+                            onclick=(subCountOfMainDish(${index}))>
                         <span>${basketObj[objKeys[3]]} x</span>
-                        <img class="basket-img" src="./assets/icons/add_20px.svg" alt="plus icon for add button">
+                        <img class="basket-img" src="./assets/icons/add_20px.svg" alt="plus icon for add button"
+                            onclick="increaseCountOfMainDish(${index})">
                     </div>
                     <span>${basketObj[objKeys[2]]} €</span>
-                    <img class="basket-img" src="./assets/icons/delete_20px.svg" alt="trash icon for remove dish">
+                    <img class="basket-img" src="./assets/icons/delete_20px.svg" alt="trash icon for remove dish"
+                        onclick="removeMainDishFromBasket(${index})">
                 </div>
             </div>`;
 }

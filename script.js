@@ -56,6 +56,9 @@ function renderBasket(){
         "count" : basketMainDishes[index].count
         };
 
+        dish.price = ((dish.count) * (dish.price));
+        dish.price = dish.price.toFixed(2);
+
         let objKeys = Object.keys(dish);
 
         contentBasketMainRef.innerHTML += getBasketMainTemplate(dish, objKeys, index);
@@ -84,4 +87,23 @@ function putDishToBasket(index){
 function findElementInArr(index, obj){
     let objKeys = Object.keys(obj);
     return basketMainDishes.findIndex((element) => {return (element[objKeys[0]] == index)});
+}
+
+function subCountOfMainDish(index){
+    basketMainDishes[index].count -= 1;
+
+    if (basketMainDishes[index].count <= 0){
+        removeMainDishFromBasket(index);
+    }
+    renderBasket();
+}
+
+function removeMainDishFromBasket(index){
+    basketMainDishes.splice(index, 1);
+    renderBasket();
+}
+
+function increaseCountOfMainDish(index){
+    basketMainDishes[index].count += 1;
+    renderBasket();
 }
