@@ -10,7 +10,7 @@ function getMainDishesTemplate(dishObject,objKeys, index){
 }
 
 function getSideDishesTemplate(dishObject, objKeys, index){
-    return `<div id="sideDish${index}" class="mainDish-box">
+    return `<div id="sideDish${index}" class="mainDish-box" onclick="putDishToBasketSide(${index})">
                 <div class="headline-box">
                     <span class="head-description">${dishObject[objKeys[0]]}</span>
                     <img src="./assets/icons/add_24px.svg" alt="add icon">
@@ -34,6 +34,24 @@ function getBasketMainTemplate(basketObj, objKeys, index){
                     <span>${basketObj[objKeys[2]]} €</span>
                     <img class="basket-img" src="./assets/icons/delete_20px.svg" alt="trash icon for remove dish"
                         onclick="removeMainDishFromBasket(${index})">
+                </div>
+            </div>`;
+}
+
+function getBasketSideTemplate(basketObj, objKeys, index){
+    return `<div id="basketSide${index}" class="basket-box">
+                <span class="head-basket">${basketObj[objKeys[1]]}</span>
+                <div class="control-basket">
+                    <div class="count-basket">
+                        <img class="basket-img" src="./assets/icons/remove_20px.svg" alt="minus icon for sub button"
+                            onclick=(subCountOfSideDish(${index}))>
+                        <span>${basketObj[objKeys[3]]} x</span>
+                        <img class="basket-img" src="./assets/icons/add_20px.svg" alt="plus icon for add button"
+                            onclick="increaseCountOfSideDish(${index})">
+                    </div>
+                    <span>${basketObj[objKeys[2]]} €</span>
+                    <img class="basket-img" src="./assets/icons/delete_20px.svg" alt="trash icon for remove dish"
+                        onclick="removeSideDishFromBasket(${index})">
                 </div>
             </div>`;
 }

@@ -107,3 +107,68 @@ function increaseCountOfMainDish(index){
     basketMainDishes[index].count += 1;
     renderBasket();
 }
+
+function renderBasketSide(){
+    const contentBasketSideRef = document.getElementById('my_basket_side');
+    contentBasketSideRef.innerHTML = '';
+
+    for (let index = 0; index < basketSideDishes.length; index++) {
+        let dish = {
+        "number" : basketSideDishes[index].number,
+        "name" : basketSideDishes[index].name,
+        "price" : basketSideDishes[index].price,
+        "count" : basketSideDishes[index].count
+        };
+
+        dish.price = ((dish.count) * (dish.price));
+        dish.price = dish.price.toFixed(2);
+
+        let objKeys = Object.keys(dish);
+
+        contentBasketSideRef.innerHTML += getBasketSideTemplate(dish, objKeys, index);
+    }
+}
+
+function putDishToBasketSide(index){
+    let dish = {
+        "number" : index,
+        "name" : mySideDishes[index].name,
+        "price" : mySideDishes[index].price,
+        "count" : 1
+    };
+    let elementIndexNum = findElementInArrSide(index, dish);
+
+    if (elementIndexNum != (-1)){
+        basketSideDishes[elementIndexNum].count += 1;
+    }
+    else{
+        basketSideDishes.push(dish);
+    }
+
+    renderBasketSide();
+}
+
+function findElementInArrSide(index, obj){
+    let objKeys = Object.keys(obj);
+    return basketSideDishes.findIndex((element) => {return (element[objKeys[0]] == index)});
+}
+
+
+function subCountOfSideDish(index){
+    basketSideDishes[index].count -= 1;
+
+    if (basketSideDishes[index].count <= 0){
+        removeSideDishFromBasket(index);
+    }
+    renderBasketSide();
+}
+
+function removeSideDishFromBasket(index){
+    basketSideDishes.splice(index, 1);
+    renderBasketSide();
+}
+
+function increaseCountOfSideDish(index){
+    basketSideDishes[index].count += 1;
+    renderBasketSide();
+}
