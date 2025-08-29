@@ -42,8 +42,165 @@
     font-weight: bold;
 }
 
-.radio-button{
+/* .radio-button{
     background-color: black;
     height: 20px;
     width: 20px;
+} */
+
+/* .custom-radio-btn{
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgb(128, 125, 125);
+    border-radius: 50px;
+}
+
+.custom-radio-btn .checkmark{
+    width: 5px;
+    height: 5px;
+    background-color: rgb(219, 151, 24);
+    display: none;
+}
+
+.custom-radio-btn input{
+    opacity: 0;
+}
+
+
+.custom-radio-btn input:checked + .checkmark{
+    display: inline-block;
+} */
+
+.custom-radio-btn{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 16px;
+    font-size: 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.custom-radio-btn input{
+    z-index: 100;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark{
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgb(128, 125, 125);
+    border-radius: 50px;
+}
+
+.custom-radio-btn:hover input ~ .checkmark{
+    background-color:rgb(235, 229, 229);
+}
+
+.custom-radio-btn input:checked{
+    background-color: rgb(219, 151, 24);
+}
+
+.empty-basket-btn{
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.empty-basket-btn:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.options-basket{
+    padding-top: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 16px;
+    color: rgb(59, 58, 58);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.delivery-option{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+}
+
+.costs-container{
+    padding-top: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subtotal{
+    color: rgb(128, 125, 125);
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery{
+    color: rgb(128, 125, 125);
+    display: flex;
+    justify-content: space-between;
+}
+
+.total{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.crossed-out{
+    text-decoration: line-through;
+}
+
+.close-basket-btn{
+    display: none;
+    padding-top: 16px;
+    padding-bottom: 24px;
+    text-align: center;
+}
+
+.close-basket-btn button{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    font-family: 'myRoboto';
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.5);
+    border: unset;
+    border-radius: 5px;
+}
+
+.close-basket-btn button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+@media(max-width:768px){
+    .close-basket-btn{
+        display: block;
+    }
 }

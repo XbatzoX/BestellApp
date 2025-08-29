@@ -7,6 +7,7 @@ let basketSideDishes = [];
 function renderDishes(){
     renderMainDishes(countOfMainDishes);
     renderSideDishes(countOfSideDishes);
+    hiddenDeliveryOptions();
 }
 
 function renderMainDishes(amount){
@@ -63,6 +64,8 @@ function renderBasket(){
 
         contentBasketMainRef.innerHTML += getBasketMainTemplate(dish, objKeys, index);
     }
+
+    renderCosts();
 }
 
 function putDishToBasket(index){
@@ -82,6 +85,7 @@ function putDishToBasket(index){
     }
 
     renderBasket();
+    hiddenDeliveryOptions();
 }
 
 function findElementInArr(index, obj){
@@ -101,6 +105,7 @@ function subCountOfMainDish(index){
 function removeMainDishFromBasket(index){
     basketMainDishes.splice(index, 1);
     renderBasket();
+    hiddenDeliveryOptions();
 }
 
 function increaseCountOfMainDish(index){
@@ -127,6 +132,8 @@ function renderBasketSide(){
 
         contentBasketSideRef.innerHTML += getBasketSideTemplate(dish, objKeys, index);
     }
+
+    renderCosts();
 }
 
 function putDishToBasketSide(index){
@@ -146,6 +153,7 @@ function putDishToBasketSide(index){
     }
 
     renderBasketSide();
+    hiddenDeliveryOptions();
 }
 
 function findElementInArrSide(index, obj){
@@ -166,9 +174,99 @@ function subCountOfSideDish(index){
 function removeSideDishFromBasket(index){
     basketSideDishes.splice(index, 1);
     renderBasketSide();
+    hiddenDeliveryOptions();
 }
 
 function increaseCountOfSideDish(index){
     basketSideDishes[index].count += 1;
     renderBasketSide();
+}
+
+function emptyBasket(){
+    basketMainDishes = [];
+    basketSideDishes = [];
+
+    renderBasket();
+    renderBasketSide();
+    hiddenDeliveryOptions();
+}
+
+function hiddenDeliveryOptions(){
+    let countMainInBasket = basketMainDishes.length;
+    let countSideInBasket = basketSideDishes.length;
+
+    if ((countMainInBasket > 0) || (countSideInBasket > 0)){
+        document.getElementById('option_basket').classList.remove('hide');
+        document.getElementById('costs').classList.remove('hide');
+    }
+    else{
+        document.getElementById('option_basket').classList.add('hide');
+        document.getElementById('costs').classList.add('hide');
+    }
+}
+
+function renderCosts(){
+    const contentCostsRef = document.getElementById('costs');
+    contentCostsRef.innerHTML = '';
+
+
+    let orderCosts = calculateCosts();
+    let isDeliveryChecked = document.getElementById('radio_delivery').checked;
+    let totalCosts;
+
+    if (isDeliveryChecked == false){
+        totalCosts = orderCosts;
+    }
+    else{
+        totalCosts = (orderCosts + 5.0);
+    }
+
+    orderCosts = orderCosts.toFixed(2);
+    totalCosts = totalCosts.toFixed(2);
+
+    contentCostsRef.innerHTML = getCostsTemplate(orderCosts, totalCosts);
+
+    classDeliveryCosts(isDeliveryChecked);
+}
+
+function calculateCosts(){
+    let countMainInBasket = basketMainDishes.length;
+    let countSideInBasket = basketSideDishes.length;
+    let amountMain = 0.0;
+    let amountSide = 0.0;
+    let costs = 0.0;
+
+    for (let i = 0; i < countMainInBasket; i++) {
+        amountMain += (basketMainDishes[i].price * basketMainDishes[i].count);
+    }
+
+    for (let i = 0; i < countSideInBasket; i++) {
+        amountSide += (basketSideDishes[i].price * basketSideDishes[i].count);
+    }
+
+    costs = amountMain + amountSide;
+
+    return costs;
+}
+
+function classDeliveryCosts(isDeliveryChecked){
+    if (isDeliveryChecked == false){
+        document.getElementById('delivery_costs').classList.add('crossed-out');
+    }
+    else{
+        document.getElementById('delivery_costs').classList.remove('crossed-out');
+    }
+}
+
+function showBasket(){
+    document.getElementById('main_section').classList.add('hide');
+    document.getElementById('basket_section').classList.remove('basket-show');
+    document.getElementById('basket_section').classList.add('popup');
+}
+
+function closeBasket(){
+    document.getElementById('basket_section').classList.remove('popup');
+    document.getElementById('basket_section').classList.add('basket-show');
+    document.getElementById('main_section').classList.remove('hide');
+    
 }

@@ -55,3 +55,18 @@ function getBasketSideTemplate(basketObj, objKeys, index){
                 </div>
             </div>`;
 }
+
+function getCostsTemplate(orderCosts, totalCosts){
+    return `<div class="subtotal">
+                <span>Zwischensumme</span>
+                <span>${orderCosts} €</span>
+            </div>
+            <div id="delivery_costs" class="delivery">
+                <span>Lieferkosten</span>
+                <span>5,00 €</span>
+            </div>
+            <div class="total">
+                <span>Gesamt</span>
+                <span>${totalCosts} €</span>
+            </div>`;
+}

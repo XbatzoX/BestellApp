@@ -8,6 +8,10 @@ body{
     font-family: 'myRoboto';
 }
 
+.hide{
+    display: none;
+}
+
 .headline{
     padding-left: 24px;
     padding-right: 24px;
@@ -31,6 +35,14 @@ main{
 
 .basket-container{
     width: 300px;
+}
+
+.basket-show{
+    display: block;
+}
+
+.popup{
+    display: block;
 }
 
 #basket_line{
@@ -138,4 +150,54 @@ main{
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.open-basket-btn{
+    display: none;
+    padding-top: 16px;
+    padding-bottom: 24px;
+    text-align: center;
+}
+
+.open-basket-btn button{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    font-family: 'myRoboto';
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.5);
+    border: unset;
+    border-radius: 5px;
+}
+
+.open-basket-btn button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+@media(max-width:768px){
+    .basket-container{
+        width: 100%;
+    }
+
+    .basket-show{
+        display: none;
+    }
+
+    .circle-img-container{
+        left: 45%;
+    }
+
+    .open-basket-btn{
+        display: block;
+    }
+}
+
+@media(max-width:400px){
+    .circle-img-container{
+        left: 45%;
+    }
 }

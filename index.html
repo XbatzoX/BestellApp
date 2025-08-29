@@ -21,7 +21,7 @@
         </div>
     </header>
     <main>
-        <section class="main-container">
+        <section id="main_section" class="main-container">
             <div class="daily-receipt">
                 <img class="daily-img" src="./assets/img/kebap.jpg" alt="picture of daily receipt">
                 <div class="info-container">
@@ -49,24 +49,35 @@
                     <div class="dishes-content" id="side_dishes"></div>
                 </div>
             </div>
+            <div class="open-basket-btn">
+                <button onclick="showBasket()">Warenkorb öffnen</button>
+            </div>
         </section>
 
-       <section class="basket-container">
+       <section id="basket_section" class="basket-container basket-show">
             <h2 id="basket_line">Warenkorb</h2>
             <div class="basket-content" id="my_basket_main"></div>
             <div class="basket-content" id="my_basket_side"></div>
-            <div class="options-basket">
+            <div id="option_basket" class="options-basket">
                 <div id="radio_option" class="delivery-option">
-                    <label for="radio_option">
-                        <input type="radio" name="radio" id="radio_delivery" checked="checked">
-                        <span>Lieferung</span>
+                    <label for="radio_option" class="custom-radio-btn">
+                        <input type="radio" name="radio" id="radio_delivery" checked="checked" onclick="renderCosts()">
+                        <!-- <span>Lieferung</span> -->
+                         <span class="checkmark"></span>
                     </label>
-                    <label for="radio_option">
-                        <input type="radio" name="radio" id="radio_pickup">
-                        <span class="radio-button"></span>
-                        Selbstabholung
+                    <label for="radio_option" class="custom-radio-btn">
+                        <input type="radio" name="radio" id="radio_pickup" onclick="renderCosts()">
+                        <span class="checkmark"></span>
                     </label>
                 </div>
+                <div class="empty-basket-btn" onclick="emptyBasket()">
+                    <span>Warenkorb leeren</span>
+                    <img src="./assets/icons/delete_forever.svg" alt="trash bin with cross inside">
+                </div>
+            </div>
+            <div id="costs" class="costs-container"></div>
+            <div class="close-basket-btn">
+                <button onclick="closeBasket()">Warenkorb schließen</button>
             </div>
         </section>
         
