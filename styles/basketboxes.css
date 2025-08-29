@@ -1,3 +1,7 @@
+.basket-container{
+    min-height: calc(100vh - 203px);
+}
+
 .basket-content{
     display: flex;
     flex-direction: column;
