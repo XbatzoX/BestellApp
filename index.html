@@ -25,7 +25,7 @@
             <div class="daily-receipt">
                 <img class="daily-img" src="./assets/img/kebap.jpg" alt="picture of daily receipt">
                 <div class="info-container">
-                    <span id="daily_receipt_underline">Döner Kebab</span>
+                    <span id="daily_receipt_underline">Ibis Kebab</span>
                     <span id="comment_daily_receipt">Bewertung (4,8 von 5 Sternen)</span>
                 </div>
                 <div class="circle-img-container">
@@ -55,29 +55,32 @@
         </section>
 
        <section id="basket_section" class="basket-container basket-show">
-            <h2 id="basket_line">Warenkorb</h2>
-            <div class="basket-content" id="my_basket_main"></div>
-            <div class="basket-content" id="my_basket_side"></div>
-            <div id="option_basket" class="options-basket">
-                <div id="radio_option" class="delivery-option">
-                    <label for="radio_option" class="custom-radio-btn">
-                        <input type="radio" name="radio" id="radio_delivery" checked="checked" onclick="renderCosts()">
-                        <!-- <span>Lieferung</span> -->
-                         <span class="checkmark"></span>
-                    </label>
-                    <label for="radio_option" class="custom-radio-btn">
-                        <input type="radio" name="radio" id="radio_pickup" onclick="renderCosts()">
-                        <span class="checkmark"></span>
-                    </label>
+            <div class="basket-frame">
+                <h2 id="basket_line">Warenkorb</h2>
+                <div class="basket-content" id="my_basket_main"></div>
+                <div class="basket-content" id="my_basket_side"></div>
+                <div id="option_basket" class="options-basket">
+                    <div id="radio_option" class="delivery-option">
+                        <label for="radio_option" class="custom-radio-btn">
+                            <input type="radio" name="radio" id="radio_delivery" checked="checked" onclick="renderCosts()">
+                            <span class="checkmark"></span>
+                            <span class="description-radio-btn">Lieferung</span>
+                        </label>
+                        <label for="radio_option" class="custom-radio-btn">
+                            <input type="radio" name="radio" id="radio_pickup" onclick="renderCosts()">
+                            <span class="checkmark"></span>
+                            <span class="description-radio-btn">Selbstabholung</span>
+                        </label>
+                    </div>
+                    <div class="empty-basket-btn" onclick="emptyBasket()">
+                        <span>Warenkorb leeren</span>
+                        <img src="./assets/icons/delete_forever.svg" alt="trash bin with cross inside">
+                    </div>
                 </div>
-                <div class="empty-basket-btn" onclick="emptyBasket()">
-                    <span>Warenkorb leeren</span>
-                    <img src="./assets/icons/delete_forever.svg" alt="trash bin with cross inside">
+                <div id="costs" class="costs-container"></div>
+                <div class="close-basket-btn">
+                    <button onclick="closeBasket()">Warenkorb schließen</button>
                 </div>
-            </div>
-            <div id="costs" class="costs-container"></div>
-            <div class="close-basket-btn">
-                <button onclick="closeBasket()">Warenkorb schließen</button>
             </div>
         </section>
         

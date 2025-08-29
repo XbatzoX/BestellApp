@@ -4,6 +4,11 @@
     gap: 0px;
 }
 
+.basket-frame{
+    position: sticky;
+    top: 0;
+}
+
 .basket-box{
     display: flex;
     flex-direction: column;
@@ -75,8 +80,9 @@
     display: block;
     position: relative;
     cursor: pointer;
-    padding-bottom: 16px;
-    font-size: 18px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    color: rgb(128, 125, 125);
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -104,12 +110,17 @@
     background-color:rgb(235, 229, 229);
 }
 
-.custom-radio-btn input:checked{
+.custom-radio-btn input:checked ~ .checkmark{
     background-color: rgb(219, 151, 24);
+}
+
+.description-radio-btn{
+    padding-left: 24px;
 }
 
 .empty-basket-btn{
     padding: 8px;
+    height: 32px;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -124,7 +135,7 @@
 }
 
 .options-basket{
-    padding-top: 16px;
+    padding-top: 24px;
     padding-left: 8px;
     padding-right: 8px;
     padding-bottom: 16px;
