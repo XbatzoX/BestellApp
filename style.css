@@ -36,12 +36,15 @@ body{
     display: none;
 }
 
+header{
+    background-color: rgb(219, 151, 24);
+}
+
 .headline{
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 16px;
     padding-bottom: 16px;
-    background-color: rgb(219, 151, 24);
 }
 
 .headline img{
@@ -233,10 +236,20 @@ main{
     .open-basket-btn{
         display: block;
     }
+
+    .hide{
+        display: none;
+    }
 }
 
 @media(max-width:400px){
     .circle-img-container{
         left: 45%;
+    }
+}
+
+@media(min-width:769px){
+    .hide{
+        display: block;
     }
 }

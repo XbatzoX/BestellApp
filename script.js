@@ -196,12 +196,14 @@ function hiddenDeliveryOptions(){
     let countSideInBasket = basketSideDishes.length;
 
     if ((countMainInBasket > 0) || (countSideInBasket > 0)){
-        document.getElementById('option_basket').classList.remove('hide');
-        document.getElementById('costs').classList.remove('hide');
+        document.getElementById('option_basket').classList.remove('hide-delivery-options');
+        document.getElementById('costs').classList.remove('hide-delivery-options');
+        document.getElementById('order-btn').classList.remove('hide-delivery-options');
     }
     else{
-        document.getElementById('option_basket').classList.add('hide');
-        document.getElementById('costs').classList.add('hide');
+        document.getElementById('option_basket').classList.add('hide-delivery-options');
+        document.getElementById('costs').classList.add('hide-delivery-options');
+        document.getElementById('order-btn').classList.add('hide-delivery-options');
     }
 }
 
