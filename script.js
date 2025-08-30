@@ -211,7 +211,6 @@ function renderCosts(){
     const contentCostsRef = document.getElementById('costs');
     contentCostsRef.innerHTML = '';
 
-
     let orderCosts = calculateCosts();
     let isDeliveryChecked = document.getElementById('radio_delivery').checked;
     let totalCosts;
@@ -271,4 +270,18 @@ function closeBasket(){
     document.getElementById('basket_section').classList.add('basket-show');
     document.getElementById('main_section').classList.remove('hide');
     
+}
+
+function openDialog(){
+    const contentDialogRef = document.getElementById('order_dialog');
+    contentDialogRef.showModal();
+    contentDialogRef.classList.add('opened');
+
+    emptyBasket();
+}
+
+function closeDialog(){
+    const contentDialogRef = document.getElementById('order_dialog');
+    contentDialogRef.close();
+    contentDialogRef.classList.remove('opened');
 }

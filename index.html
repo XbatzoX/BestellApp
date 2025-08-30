@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./assets/icons/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/dishBoxes.css">
     <link rel="stylesheet" href="./styles/basketboxes.css">
+    <link rel="stylesheet" href="./styles/dialog.css">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./style.css">
 
@@ -82,10 +83,24 @@
                     <div class="close-basket-btn">
                         <button class="ctrl-btn" onclick="closeBasket()">Warenkorb schließen</button>
                     </div>
-                    <button id="order-btn" class="ctrl-btn">Bestellung aufgeben</button>
+                    <button id="order-btn" class="ctrl-btn" onclick="openDialog()">Bestellung aufgeben</button>
                 </div>
             </div>
         </section>
+
+        <dialog id="order_dialog" class="dialog-design">
+            <div class="dialog-content">
+                <div class="close-dialog-container">
+                    <button class="close_dialog_btn" onclick="closeDialog()">x</button>
+                </div>
+                <div class="message-container">
+                    <h2>Testbestellung</h2>
+                    <p>Du hast eine erfolgreiche Testbestellung durchgeführt.<br>
+                        Der Warenkorb wurde geleert.
+                    </p>
+                </div>
+            </div>
+        </dialog>
     </main>
     <footer class="color-header-footer">
         <a href="#header_link">
